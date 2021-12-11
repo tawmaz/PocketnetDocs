@@ -1,6 +1,6 @@
 **Pocketnet Core Node Testing and Release Process**
 
-A number of recent releases of Pocketcoin Core have introduced software defects resulting in forks or node crashes on release.  This has caused headaches for node operators (excessive monitoring and maintenance requirements), instability on the Bastyon social media site (disappearing posts, comments, etc), and frozen wallets on exchanges adversely affecting price and liquidity of PKOIN.  For example, the v0.19.17 release in late October required two emergency releases within a one week time frame in order to resolve node crashes and stuck nodes.
+Some recent releases of Pocketcoin Core have introduced software defects resulting in forks or node crashes on the network.  For example, the v0.19.17 release in late October required two emergency releases within a one week time frame in order to resolve node crashes and stuck nodes.  This has caused headaches for node operators (excessive monitoring and node maintenance requirements), instability on the Bastyon social media site (disappearing posts, comments, etc), and frozen wallets on exchanges adversely affecting price and liquidity of PKOIN.
   This document proposes a formalized release process to improve stability of pocketnet core releases and earn trust of the Bastyon/Pocketnet Core community. 
   
 **Goals**
@@ -14,7 +14,8 @@ Creation of a stable mainline software branch which new feature branches can be 
 
 **Proposed Release Process**
 
-The release process is described in the steps below.  If any software defects are encountered at any step in the process a new issue should be created on GitHub and the rest of the team notified.  Once the software defect is addressed the process should restart.
+The release process is described in the steps below.  If any software defects are encountered at any step in the process a new issue should be created on GitHub, and the rest of the team notified.  Once the software defect is addressed the process should restart.
+
 1. Apply version number release tag to repo at https://github.com/pocketnetteam/pocketnet.core to initiate release process
 1. Set ```$BUILD_TEST = xyes``` in configure.ac file and run "make check" on Linux to verify all unit tests pass and no test regressions have been introduced.  
 1. Build Windows and Linux version of packages and generate package checksum
