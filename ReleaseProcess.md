@@ -25,4 +25,4 @@ The release process is described in the steps below.  If any software defects ar
 1. Dev Team Node Upgrade: Upgrade 50% of development team operated nodes with the new Pocketnet Core package after completion of (4) Onebox Upgrade testing above.  Run these nodes for 48 hours then verify all nodes are synced to main network without errors in log before proceeding.
 1.  RC release: Above steps should be completed, dev team members should check status of their nodes and sign off that nodes are in stable and in sync with the main network.  At this point a RC (Release Candidate) with be posted on GitHub for community download with notification posted to the Bastyon forum.
 1.  Stable Release: Continue running 50% of dev nodes on release package until 10 days and 1000 hours of stable operation has been achieved (minimum 4 nodes for 10 days).  At this point the release on GitHub will be tagged or reposted as 'Stable' and notification will be posted to github.  Exchanges will be notified of stable release. 
-1. Stable release: Update 
+1. Stable release complete: Update remaining dev team maintained nodes to Stable release.  
