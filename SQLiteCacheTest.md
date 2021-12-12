@@ -55,7 +55,7 @@ cd ~/.pocketcoin
 
 sudo apt update
 sudo apt upgrade
-sudo apt install libboost-all-dev libzmq3-dev libminiupnpc-dev mosh libdb-dev
+sudo apt install libboost-all-dev libzmq3-dev libminiupnpc-dev mosh libdb-dev libdb++-dev
 ```
 The following pocketcoin.conf files were used on each node, with other node added as a peer:
 5MB cache test node:
@@ -97,7 +97,25 @@ addnode=172.31.49.109
 
 **Test Results**
 
-Both nodes started at 8:08pm, december 11.
+Both nodes started at 8:17pm, december 11.
+
+Logging enabled with ```pocketcoin-cli logging +stat```
+
+10 minutes in:
+500MB node:
+  "Height": 34500,
+    "SharedCacheUsed": 157566888,
+  "CacheHit": 3280059,
+  "CacheMiss": 0,
+
+5MB cache node:
+ "Height": 47722,
+   "SharedCacheUsed": 5261904,
+  "CacheHit": 3481354,
+  "CacheMiss": 87789,
+
+
+
 
 
 
