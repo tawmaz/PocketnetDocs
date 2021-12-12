@@ -41,6 +41,22 @@ EBS volume: 16 GB
 
 OS Image: ubuntu/images/hvm-ssd/ubuntu-focal-20.04-amd64-server-20211021 - ami-036d46416a34a611c
 
+Each node was setup with the following commands to install prerequisite packages and to create the .pocketcoin folder on the attached NVMe drive:
 
+```
+sudo mkfs -t xfs /dev/nvme1n1
+sudo mkdir /data
+sudo mount /dev/nvme1n1 /data
+sudo chmod 777 /data
+mkdir /data/.pocketcoin
+sudo chmod 777 /data/.pocketcoin
+ln -s /data/.pocketcoin /home/ubuntu/.pocketcoin
+cd ~/.pocketcoin
+
+sudo apt update
+sudo apt upgrade
+sudo apt install libboost-all-dev libzmq3-dev libminiupnpc-dev mosh
+
+``
 
 
