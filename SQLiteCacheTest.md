@@ -22,13 +22,23 @@ make clean
 make -j4
 make deploy
 ```
+Build release with 500mb cache setting by changing SQLITE_DEFAULT_CACHE_SIZE from -5000 to -500000, then:
+```
+make -j4
+make deploy
+```
+
+
 **Node Setup**
 
 Test nodes were launched on AWS with the following parameters.  Nodes were placed in a instance placement group of type "cluster" to ensure they were on the same network spine in the data center to minimize latency between the nodes. 
 
 Instance Type: m5ad.xlarge
+
 Datacenter: us-west-2d
+
 EBS volume: 16 GB
+
 OS Image: ubuntu/images/hvm-ssd/ubuntu-focal-20.04-amd64-server-20211021 - ami-036d46416a34a611c
 
 
