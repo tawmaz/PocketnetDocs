@@ -55,8 +55,49 @@ cd ~/.pocketcoin
 
 sudo apt update
 sudo apt upgrade
-sudo apt install libboost-all-dev libzmq3-dev libminiupnpc-dev mosh
+sudo apt install libboost-all-dev libzmq3-dev libminiupnpc-dev mosh libdb-dev
+```
+The following pocketcoin.conf files were used on each node, with other node added as a peer:
+5MB cache test node:
+```
+# Enable public API interfaces
+api=1
+wsuse=1
+daemon=1
 
-``
+# Setting ports
+publicrpcport=38081
+wsport=8087
+
+# Setting work queue and threads
+rpcpublicworkqueue=3000
+rpcpublicthreads=30
+rpcpostworkqueue=1500
+rpcpostthreads=15
+addnode=172.31.51.163
+```
+500MB cache test node:
+```
+# Enable public API interfaces
+api=1
+wsuse=1
+daemon=1
+
+# Setting ports
+publicrpcport=38081
+wsport=8087
+
+# Setting work queue and threads
+rpcpublicworkqueue=3000
+rpcpublicthreads=30
+rpcpostworkqueue=1500
+rpcpostthreads=15
+addnode=172.31.49.109
+```
+
+**Test Results**
+
+Both nodes started at 8:08pm, december 11.
+
 
 
