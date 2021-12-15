@@ -75,26 +75,22 @@ rpcpostworkqueue=1500
 rpcpostthreads=15
 ```
 
-**Test Results**
+**Test Run 1 Results**
 
-Both nodes started at 8:17pm, december 11.
+The pocketcoind daemon was started 12 December at 23:20 UTC time.  Both nodes were started within 1 second of each other.
 
-Logging enabled with ```pocketcoin-cli logging +stat```
+Logging was enabled with the command ```pocketcoin-cli logging +stat``` to enable performance samples to be written to the debug.log file at 1 minute increments. The python script debuglog2csv.py was used to extract time and block height data from the debug.log file on each node.
+Each node was allowed to synchronize to block height 1349351 due to an errata in SocialConsensus described here: https://github.com/pocketnetteam/pocketnet.core/issues/104
 
-10 minutes in:
-500MB node:
-  "Height": 34500,
-    "SharedCacheUsed": 157566888,
-  "CacheHit": 3280059,
-  "CacheMiss": 0,
+![500mb vs 5mb chart](https://github.com/tawmaz/PocketnetDocs/blob/main/sqlite_cache_test/500mb_vs_5mb_run1.png)
 
-5MB cache node:
- "Height": 47722,
-   "SharedCacheUsed": 5261904,
-  "CacheHit": 3481354,
-  "CacheMiss": 87789,
+Raw log files and spreadsheet files for the test run are located here: https://github.com/tawmaz/PocketnetDocs/tree/main/sqlite_cache_test
 
+**Analysis + Conclusion**
 
+The node configured with a 5 megabyte SQLite page cache maintained an advantage up to around block height 1000000. At that point the 500 mb node built a lead and reached the final block height of 1349351 at 3 hours and 26 minutes earlier when compared to the 5mb node.  There are a few possible reasons for the observed performance differences: (1) Larger cache will require a longer warm-up time to maximize the rate of cache hit versus cache misses explaining why we see the 500 mb cache node move ahead later in the test (2) Larger cache size will demonstrate more benefit on a larger database, which is why we see the performance delta switch and increase with increase in block height.
+There is not a good explanation of why the 5mb node would maintain and advantage earlier in the test.  While the larger cache size will not help with a small database it should not be detrimental.  Additional test runs will be required to determine if this is a persistent phenomena.
+A certain amount of luck is involved in node synchornization performance where nodes which peer with higher perforance and lower latency nodes will synchonize faster.  Possibly explicitly adding nodes in future runs as well as adding the nodes under test as peers to each other (so the faster node will help bring the slower one up to speed) may help limit variability due to luck.  
 
 
 
