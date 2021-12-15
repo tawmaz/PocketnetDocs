@@ -11,6 +11,8 @@ Some recent releases of Pocketcoin Core have introduced software defects resulti
 - More efficient use of dev time by creating a stable software tag in code to act as a launch point for new feature development
 - Creation of a stable mainline software branch which new feature branches can be based upon.
 
+**Release Branches**
+PocketNet core will switch git release branch names to reflect the minor version number of the release.  Branch "0.20" will be used for current releases of the 0.20.XX PocketNet Core nodes.  Branch "0.21" will be used for new developments targetted for the upcoming 0.21.XX releases.
 
 **Proposed Release Process**
 
