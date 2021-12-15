@@ -16,7 +16,7 @@ Some recent releases of Pocketcoin Core have introduced software defects resulti
 
 The release process is described in the steps below.  If any software defects are encountered at any step in the process a new issue should be created on GitHub, and the rest of the team notified.  Once the software defect is addressed the process should restart.
 
-1. Apply version number release tag to repo at https://github.com/pocketnetteam/pocketnet.core to initiate release process
+1. Apply version number release tag to branch in repo at https://github.com/pocketnetteam/pocketnet.core to initiate release process.  At present branch 0.20 is for fixes to current release version while branch 0.21 includes new feature development and porting of recent changes from Bitcoin core.
 1. Set ```$BUILD_TEST = xyes``` in configure.ac file and run "make check" on Linux to verify all unit tests pass and no test regressions have been introduced.  
 1. Build Windows and Linux version of packages and generate package checksum
 1. TestNet: Deploy release to node connected to testnet.  Verify full sync completes, node is able to connect to front end client, complete transactions, and stake.
