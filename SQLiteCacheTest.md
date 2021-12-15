@@ -55,6 +55,12 @@ cd ~/.pocketcoin
 sudo apt update
 sudo apt upgrade
 sudo apt install libboost-all-dev libzmq3-dev libminiupnpc-dev mosh libdb-dev libdb++-dev
+
+sudo fallocate -l 16G /data/swapfile
+sudo chmod 600 /data/swapfile
+sudo mkswap /data/swapfile
+sudo swapon /data/swapfile
+sudo swapon -show
 ```
 The following pocketcoin.conf files were used on each node.  wsuse and api are set to 0 due to this bug: https://github.com/pocketnetteam/pocketnet.core/issues/108 
 ```
