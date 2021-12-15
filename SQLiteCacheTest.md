@@ -8,11 +8,10 @@ AWS m5ad.xlarge platform is a 4 core AMD Epyc server with 16GB RAM, 150GB NVMe S
 https://aws.amazon.com/blogs/aws/new-amd-epyc-powered-amazon-ec2-m5ad-and-r5ad-instances/
 
 **Build Steps**
-Checkout git commit 4e0b0232f65edf4a79805975febd918c6dc350c2 
 
 Create release package with default 5MB cache:
 ```
-git checkout 4e0b0232f65edf4a79805975febd918c6dc350c2
+git checkout 8ac1b200ebb8a5cb362c28f0102fecdcda7fa7c7
 ./autogen.sh
 cd depends
 make -j4
