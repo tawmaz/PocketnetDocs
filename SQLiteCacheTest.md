@@ -92,7 +92,12 @@ Each node was allowed to synchronize to block height 1349351 due to an errata in
 Raw log files and spreadsheet files for the test run are located here: https://github.com/tawmaz/PocketnetDocs/tree/main/sqlite_cache_test
 
 **Test Run 2 Results**
+
+For the second run both nodes were started 1 second of each other at 2021-12-15T21:26:32Z.  Sync was considered complete after block 1486000.  The 5mb node completed at 2021-12-17T04:57:09Z, approximately 31.5 hours.  The 500 mb node completed sync at 2021-12-17T03:53:15Z, approximately 30.5 hours.  The 5mb node was able to sync significantly faster up until around block 1000000, but the 500 mb node surpassing at around block 1250000.
+
 ![500mb vs 5mb chart Run 2](https://github.com/tawmaz/PocketnetDocs/blob/main/sqlite_cache_test/500mb_vs_5mb_run2.png)
+
+Raw log files and spreadsheet files for the test run are located here: https://github.com/tawmaz/PocketnetDocs/tree/main/sqlite_cache_test
 
 **Analysis + Conclusion**
 
