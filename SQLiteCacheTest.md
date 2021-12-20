@@ -91,6 +91,9 @@ Each node was allowed to synchronize to block height 1349351 due to an errata in
 
 Raw log files and spreadsheet files for the test run are located here: https://github.com/tawmaz/PocketnetDocs/tree/main/sqlite_cache_test
 
+**Test Run 2 Results**
+![500mb vs 5mb chart Run 2](https://github.com/tawmaz/PocketnetDocs/blob/main/sqlite_cache_test/500mb_vs_5mb_run2.png)
+
 **Analysis + Conclusion**
 
 The node configured with a 5 megabyte SQLite page cache maintained an advantage up to around block height 1000000. At that point the 500 mb node built a lead and reached the final block height of 1349351 at 3 hours and 26 minutes earlier when compared to the 5mb node.  There are a few possible reasons for the observed performance differences: (1) Larger cache will require a longer warm-up time to maximize the rate of cache hit versus cache misses explaining why we see the 500 mb cache node move ahead later in the test (2) Larger cache size will demonstrate more benefit on a larger database, which is why we see the performance delta switch and increase with increase in block height.
