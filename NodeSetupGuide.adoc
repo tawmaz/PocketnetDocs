@@ -1,0 +1,28 @@
+
+
+### Minimum System Requirements
+Below are the minimum system requirements to run a PocketNet node which could be used for staking. A node
+with these requirements may not be sufficient to support the PocketNet network.
+2 core CPU
+4GB RAM
+100 GB harddrive
+10 MBps internet connection
+
+Recommended System Requirements
+
+
+### Linux Getting Started
+
+### Windows Getting Started
+
+### Network Setup
+
+### Running a Headless Node From the Command Line
+
+wget
+
+### Windows Getting Started
+
+### Getting Started with Staking
+
+
