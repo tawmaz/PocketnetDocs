@@ -23,19 +23,29 @@ The content creator who is recieving the advertisement request will get a pop-up
 
 
 ## Workflow Example:
+
 The workflow below illustrates how an advertisement would be placed between two users.  User 'A'  (Advertiser) who wishes to place an add on user 'C' (Content Creator) channel.
+
 1.   User A opens the advanced user panel of the Bastion app, and selects option to place an advertisement.  User A fills out fields including PKOIN amount, duration of the advertisement, and link to the content from User A's feed they wish to advertise.   User A fills in the username of User C which they wish to advertise with.  The Bastyon app helps autocomplete the username field, and create the metadata including pocketnet account ID of User C.
+
 2. Bastyon app signs the request with User A's private key, and sends out the advertisement transaction as a API request to the PocketNet node it is connected to.  This transaction is propagated out through the entire network as a specialized mempool transaction which a maximum expiration time of two weeks.  These transactions are managed seperately from the mempool used for coin transactions, but use similar mechanisms for propagation, epiry, and managment.
+
 3. User C signs into the Bastyon app.  They recieve a notification that they have recieved a advertisement request.  They click on the notification which takes them to the user/advanced/advertisements panel of the bastyon Application.  User C is presented with the proposed advertisement content,  PKOIN amount, time duration, and an accept and decline buttons.
 
 [declined workflow]
+
 4a.  User C clicks decline.  The Bastyon application appends a field in the request indicating the request was declined, and signs the request with User C's private key.  The request is issued via API to the connected node. 
+
 5a. Declined request is propagated throughout the node network, and as nodes recieve the request they replace the original request in the mempool.
+
 6a. User A signs into the bastyon app.   They see in their notifications that the advertisement request to user C was declined.  The request is allow to expire normally from the node mempool.
 
 [accepted workflow]
+
 4b. User C clicks accept.  The Bastyon app appends a field to the request indicating the request was accepted, and signs the request with User C's private key.  The request is issued via API to the connected node.
+
 5b. Accepted request is propagated across nodes and queued for inclusion into the blockchain.  Once the multi-sig transaction has been accepted into a block, the PKOIN amount will be transfered to User C's wallet, and API requests for user C's post history will include the advertised content.
+
 6b. User A signs into the Bastyon app and sees in their notifications that their advertisement was accepted by User C.
 
 ##Test Plan
