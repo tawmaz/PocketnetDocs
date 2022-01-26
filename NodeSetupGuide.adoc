@@ -1,17 +1,44 @@
 
 
 ### Minimum System Requirements
-Below are the minimum system requirements to run a PocketNet node which could be used for staking. A node
-with these requirements may not be sufficient to support the PocketNet network.
+Below are the minimum system requirements to run a PocketNet node to use as a wallet, for coin staking to earn PKOIN, and to use as a local node on your home network.  A node with these requirements may need to be upgraded within the next 1 - 2 years.
+
 2 core CPU
 4GB RAM
 100 GB harddrive
-10 MBps internet connection
+10 Mbps internet connection
 
-Recommended System Requirements
+### Recommended System Requirements
+The below recommended system requirements are recommended for a node which will act as a public node to service the Bastyon front end, in addition to wallet and coin staking abilities.  The recommended requirements should provide enough headroom to support the Pocketnet network for at least 2 years into the future.
+
+4 core CPU
+16 GB RAM
+500 GB SSD Harddrive
+100 Mbps internet connection
+Publically accessible IP and pocketnet ports (see Network Setup below)
+
+### Linux Getting Started  (Ubuntu, Debian, Mint, etc.)
+Install package with root privilegies. To do this, open the terminal in the directory where you downloaded the installer and execute commands:
+```
+$ sudo dpkg -i pocketnetcore_*_linux_x64_setup.deb
+```
+
+Download and copy the checkpoints file from the repository to the .pocketcoin/checkpoints directory (example below for version v0.20.17):
+```
+mkdir ~/.pocketcoin/checkpoints
+cd ~/.pocketcoin/checkpoints
+wget https://github.com/pocketnetteam/pocketnet.core/releases/download/v0.20.17/main.sqlite3
+cd ~
+```
 
 
-### Linux Getting Started
+After installation, start the GUI pocketcoin client from the command line.  If you would like to run the pocketcoin node from the command line or in headless mode, go to the "Running a Headless Node from the Command Line" section below.
+```
+$ pocketcoin-qt
+```
+At this point the Pocketcoin client will start synchornizing with the network.  Depending on network performance full synchronization can take anywhere from a few days to over a week to complete.  It is recommended to allow the node to fully sync with the network the first time 
+
+If it is desired to run a full node to support the Bastyon front-end app, proceed to the Network Setup section below.
 
 ### Windows Getting Started
 
@@ -25,4 +52,5 @@ wget
 
 ### Getting Started with Staking
 
+### Getting Help
 
