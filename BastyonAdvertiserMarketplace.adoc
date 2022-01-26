@@ -2,9 +2,11 @@
 
 Create new type of mempool marketplace transaction with a expiration of 2 weeks, allowing for bids/auctions sales of advertisements on content creator feeds.  These transactions will populate across the node using same mechanism as mempool transactions, but will have a longer expiration time to allow for acceptance by the recipient of the adversitement.  If the transaction is not accepted by the recipient there will be no long-term impact to the size of the block chain.  The same mechanism can allow for future expansion to auctions with only the final winning auction price needing storage on the block chain.
 
-First iteration will be advertiser marketplace, sell advertisements on a channels posts/videos/feeds
+First iteration will be advertiser marketplace, sell advertisements on a channel's posts/videos/feeds.
+
 Marketplace transaction is initiated with a few parameters:
- - username or ID of purchaser
+
+- username or ID of purchaser
  - username or wallet ID of target accounts
  - Bid amount for advertisement in PKOIN
  - Transaction expiration of max 2 weeks
