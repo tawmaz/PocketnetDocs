@@ -25,6 +25,9 @@ The below recommended system requirements are recommended for a node which will 
 Publically accessible IP and ports (see Network Setup below)
 
 ### Linux Getting Started  (Ubuntu, Debian, Mint, etc.)
+
+Download the latest pocketnetcore_*_linux_x64_setup package from the project releases page at: https://github.com/pocketnetteam/pocketnet.core/releases
+
 Install package with root privilegies. To do this, open the terminal in the directory where you downloaded the installer and execute commands:
 ```
 $ sudo dpkg -i pocketnetcore_*_linux_x64_setup.deb
