@@ -35,6 +35,7 @@ $ sudo dpkg -i pocketnetcore_*_linux_x64_setup.deb
 
 Download and copy the checkpoints file from the repository to the .pocketcoin/checkpoints directory (example below for version v0.20.17):
 ```
+mkdir ~/.pocketcoin
 mkdir ~/.pocketcoin/checkpoints
 cd ~/.pocketcoin/checkpoints
 wget https://github.com/pocketnetteam/pocketnet.core/releases/download/v0.20.17/main.sqlite3
