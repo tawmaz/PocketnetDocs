@@ -124,6 +124,34 @@ Linksys: https://www.linksys.com/us/support-article?articleNum=138535
 Google Wifi: https://support.google.com/googlenest/answer/6274503?hl=en
 
 === Running a Headless Node From the Command Line
+Running the pocketcoind command will start PocketNet core is text only mode from a command terminal.  On Linux, it is possible to launch pocketcoind as a daemon process running in the background by using the -daemon parameter:
+
+```
+pocketcoind -daemon
+```
+To see other available options with pocketcoind:
+```
+pocketcoind -?
+```
+
+Commands can be sent to pocketcoind by using the pocketcoin-cli program.  These same commands can also be run through the pocketcoin-qt debug terminal.  Below are some common and useful commands.
+
+Display list of available commands 
+pocketcoin-cli
+
+Send a command to the pocketcoind process to gracefully shutdown:
+```
+pocketcoin-cli stop
+```
+
+
+getbalance
+
+getnewaddress
+
+sendtoaddress
+
+Pocketcoin-cli has the capability to send commands to a remote node to enable remote managment and headless node operation.  This is an advanced topic beyond the scope of this guide, however the 'pocketcoin-cli --help' lists necessary commands for remote operation. 
 
 [TODO]
 
@@ -132,7 +160,7 @@ Google Wifi: https://support.google.com/googlenest/answer/6274503?hl=en
 === Getting Started with Staking
 
 Staking is the process where your node works to generate new blocks on the PocketNet blockchain, and in return is rewarded with PKOIN awards.  New blocks are generated on the PocketNet blockchain every 1 minute, and 5 PKOIN is awarded to a winning node each round.  A stake reward halving occurs every 2 million blocks, the first on the PocketNet network will occur around October of 2022, after which the stake reward will be reduced to 2.5 coins per block.
-To participate in staking, you must deposit at least 50 PKOIN to your node wallet address and ensure.  The more PKOIN desposited to your wallet address, the better your chances of winning a stake round, up to a cap of 10000 PKOIN.
+To participate in staking, you must deposit at least 50 PKOIN to your node wallet address and ensure.  The more PKOIN desposited to your wallet address, the better your chances of winning a stake round.
 
 Running the "getstakinginfo" command from pocketcoin-cli or the debug window of Pocketcoin-qt will tell you if your node is staking, for example:
 
@@ -170,10 +198,14 @@ tar -xzvf latest.tgz -C ./
 ```
 
 ### Getting Help
+Post to the Bastyon/Pocknet tag on the Bastion social media app to get help with node setup
 
+To report software defects and view current issues check our GitHub issues page: https://github.com/pocketnetteam/pocketnet.core/issues
+
+@Tawmaz on Bastyon for issues with this document.
 
 ### How Can I Help Out?
 
-Contribute to our Github projects.  We are looking for both C/C++, Javascript Node JS coders, and anyone with a willingness to learn.
+Contribute to our Github projects.  We are looking for C/C++, Javascript Node JS coders, and anyone with a willingness to learn.
 
-
+https://github.com/pocketnetteam
