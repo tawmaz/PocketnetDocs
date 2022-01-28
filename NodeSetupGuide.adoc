@@ -3,7 +3,7 @@ This guide provides instructions on how to setup a compute node to support the P
 More detail about the PocketNet network can be found in the whitepaper here: https://pocketnet.app/docs/Pocketnet%20Whitepaper%20Draft%20v2.pdf
 And at the Bastyon social media site at bastyon.com
 
-=== Suported Operating System
+=== Suported Operating Systems
 The below operating systems have been validated to work with PocketNet Core software by the developer and node operator community:
 
     Docker
