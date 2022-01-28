@@ -5,11 +5,19 @@ And at the Bastyon social media site at bastyon.com
 
 === Suported Operating System
 The below operating systems have been validated to work with PocketNet Core software by the developer and node operator community:
-Linux Ubuntu 20.04
-Linux Ubuntu 18.04
+
+Docker
+
 Linux Debian 11
+
 Linux Mint
+
+Linux Ubuntu 20.04
+
+Linux Ubuntu 18.04
+
 Windows 10
+
 Windows 11
 
 
