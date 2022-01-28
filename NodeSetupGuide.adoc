@@ -1,3 +1,16 @@
+== PocketNet Core Node Setup Guide
+This guide provides instructions on how to setup a compute node to support the PocketNet blockchain network and Bastyon decentralized social media app. PocketNet Core Node  operators are rewarded in the platform cryptocurrency, PKOIN, by participating in a process called staking which generates new blocks on the blockchain.
+More detail about the PocketNet network can be found in the whitepaper here: https://pocketnet.app/docs/Pocketnet%20Whitepaper%20Draft%20v2.pdf
+And at the Bastyon social media site at bastyon.com
+
+=== Suported Operating System
+The below operating systems have been validated to work with PocketNet Core software by the developer and node operator community:
+Linux Ubuntu 20.04
+Linux Ubuntu 18.04
+Linux Debian 11
+Linux Mint
+Windows 10
+Windows 11
 
 
 === Minimum System Requirements
@@ -76,6 +89,34 @@ Start the Pocketcoin Core application from the Windows Start menu.  A Windows Se
 .Block image
 image::https://github.com/tawmaz/PocketnetDocs/blob/main/windowsfirewall.PNG["WindowsFirewallImage",width=640, link="https://github.com/tawmaz/PocketnetDocs/blob/main/windowsfirewall.PNG"]
 
+### Docket Setup
+
+Make sure that enough CPU, memory and disk space are allocated to your docker container according to the "Minimum System Requirements" section above.
+You can start your node with a single command from Docker.
+
+```
+$ docker run -d \
+    --name=pocketnet.main \
+    -p 37070:37070 \
+    -p 38081:38081 \
+    -p 8087:8087 \
+    -v /var/pocketnet/.data:/home/pocketcoin/.pocketcoin \
+    pocketnetteam/pocketnet.core:latest
+```
+The node can be controlled in docker using the pocketcoin-cli and pocketcoin-tx commands below:
+
+```
+$ docker ps --format '{{.ID}}\t{{.Names}}\t{{.Image}}'
+ea7759a47250    pocketnet.main      pocketnetteam/pocketnet.core:latest
+$
+$ docker exec -it pocketnet.main /bin/sh
+$
+$ pocketcoin-cli --help
+$ pocketcoin-tx --help
+```
+
+More information : https://hub.docker.com/r/pocketnetteam/pocketnet.core
+
 ### Network Setup
 
 In order for your node to receive incoming connections from the Bastyon front end and other nodes on the network, the following ports must be open on your node: 8087, 37070, and 38081.
@@ -89,7 +130,9 @@ Google Wifi: https://support.google.com/googlenest/answer/6274503?hl=en
 
 === Running a Headless Node From the Command Line
 
+[TODO]
 
+[TODO pocketcoin-cli]
 
 === Getting Started with Staking
 
@@ -120,6 +163,7 @@ If the "enabled" and "staking" fields are set to "true" the node is actively sta
 ### Starting node from Checkpoint
 
 ### Getting Help
+
 
 ### How Can I Help Out?
 
