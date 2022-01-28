@@ -85,9 +85,9 @@ image::https://github.com/tawmaz/PocketnetDocs/blob/main/windowsfirewall.PNG["Wi
 
 At this point the Pocketcoin client will start synchornizing with the network.  Depending on network performance full synchronization can take anywhere from a few days to over a week to complete.  If it is necessary to bring a node up in a short period of time, it is possible to download a checkpoint following the instructions in the "Starting from Checkpoint" section below.  However it is recommended to allow a node to synchronize with the network on it's own as this validates the public block chain and provides additional security and decentralization.
 
-### Docket Setup
+### Docker Setup
 
-Make sure that enough CPU, memory and disk space are allocated to your docker container according to the "Minimum System Requirements" section above.
+Make sure that enough CPU, memory and disk space are allocated to your Docker container according to the "Minimum System Requirements" section above.
 You can start your node with a single command from Docker.
 
 ```
@@ -99,7 +99,7 @@ $ docker run -d \
     -v /var/pocketnet/.data:/home/pocketcoin/.pocketcoin \
     pocketnetteam/pocketnet.core:latest
 ```
-The node can be controlled in docker using the pocketcoin-cli and pocketcoin-tx commands below:
+The node can be controlled in Docker using the pocketcoin-cli and pocketcoin-tx commands demonstrated below:
 
 ```
 $ docker ps --format '{{.ID}}\t{{.Names}}\t{{.Image}}'
