@@ -54,6 +54,7 @@ If it is desired to run a full node to support the Bastyon front-end app, procee
 ### Windows Getting Started
 
 Download the pocketnetcore_*_win_x64_setup.exe installer from the GitHub releases page here: https://github.com/pocketnetteam/pocketnet.core/releases
+
 Run the installer.  When you first start, the pocketnetcore desktop utility will ask for the location of the blockchain data directory. Default for Windows %APPDATA%/Pocketcoin, for linux ~/.pocketcoin.
 Download the checkpoints file before starting the pocketcoin client for the first time.  Below are the steps to download it from a cmd window:
 ```
