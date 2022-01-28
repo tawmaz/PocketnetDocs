@@ -59,7 +59,6 @@ Run the installer.
 
 Before starting the PocketNet app for the first time, download the file for the main.sqlite3 file from the releases page: 
 
-When you first start, the pocketnetcore desktop utility will ask for the location of the blockchain data directory. Default for Windows %APPDATA%/Pocketcoin, for linux ~/.pocketcoin.
 Download the checkpoints file before starting the pocketcoin client for the first time.  Below are the steps to download it from a cmd window: https://github.com/pocketnetteam/pocketnet.core/releases
 The default data directory for PocketNet under Windows is located in the folder %APPDATA%\Pocketcoin. Copy the main.sqlite3 file to the folder %APPDATA%\Pocketcoin\checkpoints.
 Example commands are below which assume the main.sqlite3 file was downloaded to the folder %HOME%\Downloads:
@@ -69,7 +68,7 @@ cd %APPDATA%
 mkdir Pocketcoin
 cd Pocketcoin
 mkdir checkpoints
-copy %HOME%\Downloads\main.sqlite3 %APPDATA%\Pocketcoin\checkpoints\main.sqlite3
+copy %HOMEPATH%\Downloads\main.sqlite3 %APPDATA%\Pocketcoin\checkpoints\main.sqlite3
 ```
 
 Start the Pocketcoin GUI from the startmenu.  Once started it will begin syncing with the block chain.
