@@ -3,7 +3,7 @@
 ### Minimum System Requirements
 Below are the minimum system requirements to run a PocketNet node to use as a wallet, for coin staking to earn PKOIN, and to use as a local node on your home network.  A node with these requirements may need to be upgraded within the next 1 - 2 years.
 
-2 core CPU
+2 core x86-64 CPU
 
 4GB RAM
 
@@ -14,7 +14,7 @@ Below are the minimum system requirements to run a PocketNet node to use as a wa
 ### Recommended System Requirements
 The below recommended system requirements are recommended for a node which will act as a public node to service the Bastyon front end, in addition to wallet and coin staking abilities.  The recommended requirements should provide enough headroom to support the Pocketnet network for at least 2 years into the future.
 
-4 core CPU
+4 core x86-64 CPU
 
 16 GB RAM
 
@@ -71,7 +71,7 @@ mkdir checkpoints
 copy %HOMEPATH%\Downloads\main.sqlite3 %APPDATA%\Pocketcoin\checkpoints\main.sqlite3
 ```
 
-Start the Pocketcoin GUI from the startmenu.  Once started it will begin syncing with the block chain.
+Start the Pocketcoin Core application from the Windows Start menu.  A Windows Security Alert will pop up for Windows Defender Firewall. Select "Allow access" to allow PocketNet Core through the Windows Defender Firewall for Private networks.
 
 ### Network Setup
 
