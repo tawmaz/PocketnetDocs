@@ -47,11 +47,23 @@ After installation, start the GUI pocketcoin client from the command line.  If y
 ```
 $ pocketcoin-qt
 ```
-At this point the Pocketcoin client will start synchornizing with the network.  Depending on network performance full synchronization can take anywhere from a few days to over a week to complete.  It is recommended to allow the node to fully sync with the network the first time 
+At this point the Pocketcoin client will start synchornizing with the network.  Depending on network performance full synchronization can take anywhere from a few days to over a week to complete.  If it is necessary to bring a node up in a short period of time, it is possible to download a checkpoint following the instructions in the "Starting from Checkpoint" section below.  However it is recommended to allow a node to synchronize with the network on it's own as this validates the public block chain and provides additional security and decentralization.
 
 If it is desired to run a full node to support the Bastyon front-end app, proceed to the Network Setup section below.
 
 ### Windows Getting Started
+
+Run the pocketnetcore_*_win_x64_setup.exe and follow the instructions of the installer.
+When you first start, the pocketnetcore desktop utility will ask for the location of the blockchain data directory. Default for Windows %APPDATA%/Pocketcoin, for linux ~/.pocketcoin.
+Download the checkpoints file before starting the pocketcoin client for the first time.  Below are the steps to download it from a cmd window:
+```
+cd %APPDATA%
+mkdir Pocketcoin
+cd Pocketcoin
+mkdir checkpoints
+wget https://github.com/pocketnetteam/pocketnet.core/releases/download/v0.20.17/main.sqlite3
+```
+Start the Pocketcoin GUI from the startmenu.  Once started it will begin syncing with the block chain.
 
 ### Network Setup
 
@@ -95,6 +107,8 @@ ubuntu@ip-172-31-53-18:~/.pocketcoin$ pocketcoin-cli getstakinginfo
 ```
 
 If the "enabled" and "staking" fields are set to "true" the node is actively staking.  The "expectedtime" field above gives the estimated time in seconds until the next stake win.  Stake wins are based on chance and can be highly variable.  The first time a node is setup for staking, it may take several hours for the "enabled" and "staking" fields to show up as "true".
+
+### Starting node from Checkpoint
 
 ### Getting Help
 
