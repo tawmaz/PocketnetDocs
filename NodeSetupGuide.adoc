@@ -1,6 +1,6 @@
 
 
-### Minimum System Requirements
+=== Minimum System Requirements
 Below are the minimum system requirements to run a PocketNet node to use as a wallet, for coin staking to earn PKOIN, and to use as a local node on your home network.  A node with these requirements may need to be upgraded within the next 1 - 2 years.
 
 2 core x86-64 CPU
@@ -11,7 +11,7 @@ Below are the minimum system requirements to run a PocketNet node to use as a wa
 
 10 Mbps internet connection
 
-### Recommended System Requirements
+=== Recommended System Requirements
 The below recommended system requirements are recommended for a node which will act as a public node to service the Bastyon front end, in addition to wallet and coin staking abilities.  The recommended requirements should provide enough headroom to support the Pocketnet network for at least 2 years into the future.
 
 4 core x86-64 CPU
@@ -24,7 +24,7 @@ The below recommended system requirements are recommended for a node which will 
 
 Publically accessible IP and ports (see Network Setup below)
 
-### Linux Getting Started  (Ubuntu, Debian, Mint, etc.)
+=== Linux Getting Started  (Ubuntu, Debian, Mint, etc.)
 
 Download the latest pocketnetcore_*_linux_x64_setup package from the project releases page at: https://github.com/pocketnetteam/pocketnet.core/releases
 
@@ -51,7 +51,7 @@ At this point the Pocketcoin client will start synchornizing with the network.  
 
 If it is desired to run a full node to support the Bastyon front-end app, proceed to the Network Setup section below.
 
-### Windows Getting Started
+=== Windows Getting Started
 
 Download the pocketnetcore_*_win_x64_setup.exe installer from the GitHub releases page here: https://github.com/pocketnetteam/pocketnet.core/releases
 
@@ -73,6 +73,9 @@ copy %HOMEPATH%\Downloads\main.sqlite3 %APPDATA%\Pocketcoin\checkpoints\main.sql
 
 Start the Pocketcoin Core application from the Windows Start menu.  A Windows Security Alert will pop up for Windows Defender Firewall. Select "Allow access" to allow PocketNet Core through the Windows Defender Firewall for Private networks.
 
+.Block image
+image::https://github.com/tawmaz/PocketnetDocs/blob/main/windowsfirewall.PNG["WindowsFirewallImage",width=640, link="https://github.com/tawmaz/PocketnetDocs/blob/main/windowsfirewall.PNG"]
+
 ### Network Setup
 
 In order for your node to receive incoming connections from the Bastyon front end and other nodes on the network, the following ports must be open on your node: 8087, 37070, and 38081.
@@ -84,13 +87,11 @@ Linksys: https://www.linksys.com/us/support-article?articleNum=138535
 
 Google Wifi: https://support.google.com/googlenest/answer/6274503?hl=en
 
-### Running a Headless Node From the Command Line
+=== Running a Headless Node From the Command Line
 
-wget
 
-### Windows Getting Started
 
-### Getting Started with Staking
+=== Getting Started with Staking
 
 Staking is the process where your node works to generate new blocks on the PocketNet blockchain, and in return is rewarded with PKOIN awards.  New blocks are generated on the PocketNet blockchain every 1 minute, and 5 PKOIN is awarded to a winning node each round.  A stake reward halving occurs every 2 million blocks, the first on the PocketNet network will occur around October of 2022, after which the stake reward will be reduced to 2.5 coins per block.
 To participate in staking, you must deposit at least 50 PKOIN to your node wallet address and ensure.  The more PKOIN desposited to your wallet address, the better your chances of winning a stake round, up to a cap of 10000 PKOIN.
