@@ -1,16 +1,16 @@
 == PocketNet Core Node Setup Guide
 This guide provides instructions on how to setup a compute node to support the PocketNet blockchain network and Bastyon decentralized social media app. PocketNet Core node operators are rewarded in the platform cryptocurrency, PKOIN, by participating in a process called staking which generates new blocks on the blockchain.
 More detail about the PocketNet network can be found in the whitepaper here: https://pocketnet.app/docs/Pocketnet%20Whitepaper%20Draft%20v2.pdf
-And at the Bastyon social media site at bastyon.com
+
+The Bastyon social media site can be visited at: bastyon.com
 
 === Suported Operating Systems
 The below operating systems have been validated to work with PocketNet Core software by the developer and node operator community:
 
     Docker
-    Linux Debian 11
-    Linux Mint
-    Linux Ubuntu 20.04
-    Linux Ubuntu 18.04
+    Linux Debian Bullseye and Bookworm
+    Linux Mint Cinnamon
+    Linux Ubuntu 20.04 and 18.04
     Windows 10
     Windows 11
 
