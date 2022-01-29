@@ -84,7 +84,7 @@ image::https://github.com/tawmaz/PocketnetDocs/blob/main/windowsfirewall.PNG["Wi
 
 At this point the Pocketcoin client will start synchornizing with the network.  Depending on network performance full synchronization can take anywhere from a few days to over a week to complete.  If it is necessary to bring a node up in a short period of time, it is possible to download a checkpoint following the instructions in the "Starting from Checkpoint" section below.  However it is recommended to allow a node to synchronize with the network on it's own as this validates the public block chain and provides additional security and decentralization.
 
-### Docker Setup
+=== Docker Setup
 
 Make sure that enough CPU, memory and disk space are allocated to your Docker container according to the "Minimum System Requirements" section above.
 You can start your node with a single command from Docker.
@@ -112,7 +112,7 @@ $ pocketcoin-tx --help
 
 More information : https://hub.docker.com/r/pocketnetteam/pocketnet.core
 
-### Network Setup
+=== Network Setup
 
 In order for your node to receive incoming connections from the Bastyon front end and other nodes on the network, the following ports must be open on your node: 8087, 37070, and 38081.
 On home networks, enabling port forwarding is specific to your brand of internet router.  For routers that support it, mapping to a different port should *not* be used, i.e. port external port 38081 should map to internal port 38081 on the router.  Below are links to instructions for some popular router models:
@@ -214,6 +214,16 @@ ubuntu@ip-172-31-53-18:~/.pocketcoin$ pocketcoin-cli getstakinginfo
 ```
 
 If the "enabled" and "staking" fields are set to "true" the node is actively staking.  The "expectedtime" field above gives the estimated time in seconds until the next stake win.  Stake wins are based on chance and can be highly variable.  The first time a node is setup for staking, it may take several hours for the "enabled" and "staking" fields to show up as "true".
+
+=== Buying + Selling PKOIN
+PKOIN can be purchased or sold at these exchanges:
+bitforex.com
+digifinex.com
+
+Purchase with credit card on Indacoin:
+
+https://buy.pkoin.indacoin.io/
+
 
 === Starting Node from a Blockchain Snapshot
 It is recommended to allow a PocketNet Core node to sync with the blockchain on it's own to maximize network security and decentralization.  If it is desired to bring up a node in a short amount of time, the development team provides periodic archives of the block chain which can be downloaded from https://snapshot.pocketnet.app/latest.tgz.  Be sure to back up your wallet.dat file before attempting loading the blockchain from archive.
