@@ -1,5 +1,5 @@
 == PocketNet Core Node Setup Guide
-This guide provides instructions on how to setup a compute node to support the PocketNet blockchain network and Bastyon decentralized social media app. PocketNet Core Node  operators are rewarded in the platform cryptocurrency, PKOIN, by participating in a process called staking which generates new blocks on the blockchain.
+This guide provides instructions on how to setup a compute node to support the PocketNet blockchain network and Bastyon decentralized social media app. PocketNet Core node operators are rewarded in the platform cryptocurrency, PKOIN, by participating in a process called staking which generates new blocks on the blockchain.
 More detail about the PocketNet network can be found in the whitepaper here: https://pocketnet.app/docs/Pocketnet%20Whitepaper%20Draft%20v2.pdf
 And at the Bastyon social media site at bastyon.com
 
@@ -136,26 +136,43 @@ pocketcoind -?
 
 Commands can be sent to pocketcoind by using the pocketcoin-cli program.  These same commands can also be run through the pocketcoin-qt debug terminal.  Below are some common and useful commands.
 
-Display list of available commands 
-pocketcoin-cli
+Display list of available commands to send to the node:
+```
+pocketcoin-cli help
+```
+
+Get specific help on command name "command":
+```
+pocketcoin-cli help "command"
+```
 
 Send a command to the pocketcoind process to gracefully shutdown:
 ```
 pocketcoin-cli stop
 ```
 
+Display your current balance of PKOIN:
+```
+pocketcoin-cli getbalance
+```
 
-getbalance
+Generate a new receive address to have another party send PKOIN to (such as after buying PKOIN on an exchange) with a descriptive "label" to identify it later on:
+```
+pocketcoin-cli getnewaddress "label"
+```
 
-getnewaddress
+List receive addresses which have been previously generated or used on your node:
+```
+pocketcoin-cli listreceivedbyaddress
+```
 
-sendtoaddress
+Send amount of PKOIN to "address":
+
+```
+pocketcoin-cli sendtoaddress "address" amount
+```
 
 Pocketcoin-cli has the capability to send commands to a remote node to enable remote managment and headless node operation.  This is an advanced topic beyond the scope of this guide, however the 'pocketcoin-cli --help' lists necessary commands for remote operation. 
-
-[TODO]
-
-[TODO pocketcoin-cli]
 
 === Getting Started with Staking
 
@@ -198,7 +215,9 @@ tar -xzvf latest.tgz -C ./
 ```
 
 ### Getting Help
-Post to the Bastyon/Pocknet tag on the Bastion social media app to get help with node setup
+If Pocketcoin core fails in some manner, the first step is to check the debug.log file in the pocketcoin directory.  This can oftentimes provide clues as to what went wrong with the program.
+
+Post to the Bastyon/Pocknet tag on the Bastion social media app to get help with node setup.
 
 To report software defects and view current issues check our GitHub issues page: https://github.com/pocketnetteam/pocketnet.core/issues
 
