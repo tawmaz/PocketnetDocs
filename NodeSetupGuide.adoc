@@ -217,7 +217,9 @@ If the "enabled" and "staking" fields are set to "true" the node is actively sta
 
 === Buying + Selling PKOIN
 PKOIN can be purchased or sold at these exchanges:
+
 bitforex.com
+
 digifinex.com
 
 Purchase with credit card on Indacoin:
