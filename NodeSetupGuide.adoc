@@ -1,8 +1,11 @@
-== PocketNet Core Node Setup Guide
+:toc:
+
+== PocketNet Core Node Setup
 This guide provides instructions on how to setup a compute node to support the PocketNet blockchain network and Bastyon decentralized social media app. PocketNet Core node operators are rewarded in the platform cryptocurrency, PKOIN, by participating in a process called staking which generates new blocks on the blockchain.
 More detail about the PocketNet network can be found in the whitepaper here: https://pocketnet.app/docs/Pocketnet%20Whitepaper%20Draft%20v2.pdf
 
 The Bastyon social media site can be visited at: bastyon.com
+
 
 === Suported Operating Systems
 The below operating systems have been validated to work with PocketNet Core software by the developer and node operator community:
@@ -193,6 +196,8 @@ Pocketcoin-cli has the capability to send commands to a remote node to enable re
 
 Staking is the process where your node works to generate new blocks on the PocketNet blockchain, and in return is rewarded with PKOIN awards.  New blocks are generated on the PocketNet blockchain every 1 minute, and 5 PKOIN are awarded to a winning node each round.  A stake reward halving occurs every 2.1 million blocks, where the stake reward is cut in half. The first reward havling on the PocketNet network will occur early 2023, after which the stake reward will be reduced to 2.5 coins per block.
 To participate in staking, you must deposit at least 50 PKOIN to your node wallet address and ensure.  The more PKOIN desposited to your wallet address, the better your chances of winning a stake round.
+
+*IMPORTANT:* Your wallet must be unlocked and unencrypted in order for staking to work.
 
 Running the "getstakinginfo" command from pocketcoin-cli or the debug window of Pocketcoin-qt will tell you if your node is staking, for example:
 
