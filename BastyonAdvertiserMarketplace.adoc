@@ -5,36 +5,30 @@ the power to choose what types of advertisements are allowed on their channel, v
 
 ## Example Usage Model
 
-1. Blogger sets price for an ad
+. Blogger sets price for an ad
  Node: add to user info
  Front End: create transaction Set Price for text/image or video (different prices)
 
-2. Advertiser creates a special type of a post – Ad Post. It contains a partially signed Ad transaction with an ad for a given blogger. All that remains is the blogger’s signature. It is attached as text to the Ad Post. Inputs have to be non-wallet inputs and cannot be moved (on the front end) until the time expiration (3 days for the ad). 
+. Advertiser creates a special type of a post – Ad Post. It contains a partially signed Ad transaction with an ad for a given blogger. All that remains is the blogger’s signature. It is attached as text to the Ad Post. Inputs have to be non-wallet inputs and cannot be moved (on the front end) until the time expiration (3 days for the ad). 
 PKOIN is added that is equal to the price of the blogger is Set Price (text/image or video different)
+..Node: new transaction Ad Post
+..Don’t allow to move money from the input that is used in the ad transaction for 3 days [3 days seems short]
 
-Node: new transaction Ad Post
-Don’t allow to move money from the input that is used in the ad transaction for 3 days [3 days seems short]
+. Advertiser can look for bloggers to offer the post to by using search based on :
+.. Number of followers: NF
+.. Categories/Hashtags used
+.. Activity (number of ratings/comments underneath the posts)
+.. Video or textual
+.. Price for an ad per follower
+.. Percentage of ads accepted
+.. Similar bloggers based on an initial set of bloggers (Recommended bloggers by bloggers – API call exists)
+... Node: API calls to power the search
+... Front End: Intuitive search form, as bloggers are added, sum recalculated
+. Multi-sig tx is attached to an Ad Post as a post
+. Blogger opens an Ad Offers report, reviews the ad and decides to repost or not
+... Front End: create a report for a blogger to review all ads, reputation of the advertiser
 
-3. Advertiser can look for bloggers to offer the post to by using search based on :
- a. Number of followers: NF
- b. Categories/Hashtags used
- c. Activity (number of ratings/comments underneath the posts)
- d. Video or textual
- e. Price for an ad per follower
- f. Percentage of ads accepted
- g. Similar bloggers based on an initial set of bloggers (Recommended bloggers by bloggers – API call exists)
-
-Node: API calls to power the search
-Front End: Intuitive search form, as bloggers are added, sum recalculated
-
-4. Multi-sig tx is attached to an Ad Post as a post
-
-5. Blogger opens an Ad Offers report, reviews the ad and decides to repost or not
-
-Front End: create a report for a blogger to review all ads, reputation of the advertiser
-
-6. When reposting blogger’s front end checks that the PKOIN input is still valid, and then sends the Multisig tx (which is a repost) to the node.
-*blogger cannot delete an ad
+. When reposting blogger’s front end checks that the PKOIN input is still valid, and then sends the Multisig tx (which is a repost) to the node. *blogger cannot delete an ad*
 
 
 ## Blockchain Implementation Options
