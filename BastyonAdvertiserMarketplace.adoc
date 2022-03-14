@@ -83,6 +83,8 @@ Mastering Bitcoin: Using Flow Control in Scripts - https://github.com/bitcoinboo
 
 Mastering Bitcoin: P2SH Address - https://github.com/bitcoinbook/bitcoinbook/blob/develop/ch07.asciidoc#p2sh-addresses
 
+Mastering Bitcoin: Script - https://github.com/bitcoinbook/bitcoinbook/blob/develop/appdx-scriptops.asciidoc#L56
+
 
 ## Test Plan
 Develop unit test to verify each step in workflow above between to parties.
