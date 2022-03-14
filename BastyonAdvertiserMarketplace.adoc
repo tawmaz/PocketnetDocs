@@ -58,6 +58,7 @@ Redeem Script:
 ```
 
 IF
+  <3 days> CHECKSEQUENCEVERIFY NOT DROP
   <Alice's Pubkey> CHECKSIGVERIFY
 ELSE
   <3 days> CHECKSEQUENCEVERIFY DROP
@@ -66,7 +67,7 @@ ENDIF
   
 
 ```
-Unlocking Script called with Redeem script for Alice:
+Unlocking Script called with Redeem script for Alice (before 3 days):
 
 ```
 <Alice's Sig><Alice's PubKey> TRUE
