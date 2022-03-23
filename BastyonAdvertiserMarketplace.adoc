@@ -84,6 +84,8 @@ Mastering Bitcoin: P2SH Address - https://github.com/bitcoinbook/bitcoinbook/blo
 
 Mastering Bitcoin: Script - https://github.com/bitcoinbook/bitcoinbook/blob/develop/appdx-scriptops.asciidoc#L56
 
+BIP 112 - CHECKSEQUENCEVERIFY - https://github.com/bitcoin/bips/blob/master/bip-0112.mediawiki
+
 
 ## Test Plan
 Develop unit test to verify each step in workflow above between to parties.
