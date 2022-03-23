@@ -58,7 +58,6 @@ Redeem Script:
 ```
 
 IF
-  <3 days> CHECKSEQUENCEVERIFY DROP
   <Alice's Pubkey> CHECKSIGVERIFY
 ELSE
   <3 days> CHECKSEQUENCEVERIFY DROP
