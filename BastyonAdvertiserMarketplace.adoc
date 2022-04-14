@@ -48,43 +48,22 @@ The proposed method to implement Ad Post on the blockchain is through a conditio
  OP_ENDIF;
 ```
 The top "IF" case requires the scriptSig (unlock script) to have the ascii characters "ad" pushed onto the stack followed by Alice's pubkey hash.  The "ad" characters indicate to the PocketNet nodes that additional consensus checks are required to ensure the correct AdPost payload is present on the transaction and that the target contest exists on the blockchain.
+
 The bottom "ELSE" case begins with a sequence lock which prevents Bob from reclaiming the funds until 4320 blocks have passed (3 days).
 
-
-3a. Alice posts the redemption script as a transaction to the blockchain within the three day time period.  Funds are transfered from the P2SH script back to
-Alice's wallet.  Acceptance of the redemption script let's the nodes know that Alice has accepted the add and it should be reported as
-part of Alice's feed. [Potential exploit, make sure it is not possible to run the redemption script without posting the add]
-
-3b. After a three day time period, Bob opens the Bastyon client which scans for his wallet transactions.  Since the three day time
-period has elapsed, the redeption script run's automatically and returns the funds from the P2SH address back to Bob's wallet address.
-
-### Script
-P2SH transaction to send coin outputs from Bob to Alice
-HASH160 <Redeem script hash> EQUAL
-
-
-Redeem Script:
+3a. Alice accepts the ad by posting a transaction to send the coins to her wallet.  The first output of the transaction must include a OP_RETURN repost payload which refers to the original post transaction. The unlocking sigScript is formatted as below:
+```
+[TX Signature] << [Alice PubKey] << "ad" << OP_TRUE
 ```
 
-IF
-  <Alice's Pubkey> CHECKSIGVERIFY
-ELSE
-  <3 days> CHECKSEQUENCEVERIFY DROP
-  <Bob's Pubkey> CHECKSIGVERIFY
-ENDIF
-  
 
+3b. After a three day time period, Bob can retract the adpost offer, and send the coins back to his wallet by creating a transaction with the below sigScript unlocking script:
 ```
-Unlocking Script called with Redeem script for Alice (gauranteed before 3 days then until Bob runs unlocking script):
-
-```
-<Alice's Sig><Alice's PubKey> TRUE
+[TX Signature] << [Bob's pubkey] << OP_FALSE
 ```
 
-Unlocking script prepended to redeem script for Bob (after 3 days):
-```
-<Bob's Sig><Bob's PubKey> FALSE
-```
+Example test cases of AdPost transaction: https://github.com/tawmaz/pocketnet.core/blob/multisig_ad/src/test/pocketnet_social_tests.cpp
+
 
 ## References
 Mastering Bitcoin: Using Flow Control in Scripts - https://github.com/bitcoinbook/bitcoinbook/blob/develop/ch07.asciidoc#using-flow-control-in-scripts
