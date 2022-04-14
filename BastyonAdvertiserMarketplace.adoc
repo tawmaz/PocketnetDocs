@@ -1,6 +1,6 @@
 ## Bastyon Decentralized Ad Marketplace
 
-The Bastyon Decentralized Ad Marketplace will enable sponsored content on the Bastyon social media site through a new transaction type called Ad Post.  Both the advertiser and recipient of the advertiser will agree to the transaction.  This model allows advertisers to target specific audiences, and allows content creators 
+The Bastyon Decentralized Ad Marketplace will enable sponsored content on the Bastyon social media site through a new transaction type called AdPost.  Both the advertiser and recipient of the advertiser will agree to the transaction.  This model allows advertisers to target specific audiences, and allows content creators 
 the power to choose what types of advertisements are allowed on their channel, versus ceding control to a centralized advertisement authority as it the case with mainstream social media platforms.
 
 ## Example Usage Model
