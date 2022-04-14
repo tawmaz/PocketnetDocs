@@ -33,14 +33,23 @@ PKOIN is added that is equal to the price of the blogger is Set Price (text/imag
 
 ## Blockchain Implementation
 
-The proposed method to implement Ad Post on the blockchain is through the use of a 1 of 2 P2SH (Pay To Script Hash) transaction with a 
-redemption script.  Here is a sample transaction workflow for Bob to place an advertisement on Alice's feed.
+The proposed method to implement Ad Post on the blockchain is through a conditional time locked script which the blogger can redeem within a specified time period (initialially 3 days or 4320 blocks.  Below is the workflow for two users exchanging in a AdPost transaction.  Bob is a prospective advertiser who wishes to advertise on Alice's feed.
 
-1. Bob posts a P2SH transaction to the blockchain and sends the coins to a generated P2SH address.  The transaction also contains Alice's address (public key hash) and the post ID to indicate this is a Ad Post to Alice's channel.
+1. Bob creates a standard post content transaction on the Bastyon platform which contains the content he wishes to advertise.
 
-2. When the Bastyon client which Alice run's scans the blockchain and finds this transaction, it generates a redemption script which
-matches the hash specified in the P2SH.  The script contains a condition where within 3 days (using checktimelockverify opcode) Alice
-must accept the transaction to post the add, or the funds return to Bob.
+2. Bob creates an AdPost transaction which contains the payment amount, a AdPost payload pointing to the TX hash of the transaction in step 1, and the below script in the scriptPubKey:
+```
+ OP_IF <<
+    "ad" << OP_EQUALVERIFY <<
+    OP_DUP << OP_HASH160 << [Alice PubKeyHash] << OP_EQUALVERIFY << OP_CHECKSIG <<
+ OP_ELSE << 
+     4320 << OP_CHECKSEQUENCEVERIFY << OP_DROP <<
+     OP_DUP << OP_HASH160 << [Bob's PubKeyHash] << OP_EQUALVERIFY << OP_CHECKSIG <<
+ OP_ENDIF;
+```
+The top "IF" case requires the scriptSig (unlock script) to have the ascii characters "ad" pushed onto the stack followed by Alice's pubkey hash.  The "ad" characters indicate to the PocketNet nodes that additional consensus checks are required to ensure the correct AdPost payload is present on the transaction and that the target contest exists on the blockchain.
+The bottom "ELSE" case begins with a sequence lock which prevents Bob from reclaiming the funds until 4320 blocks have passed (3 days).
+
 
 3a. Alice posts the redemption script as a transaction to the blockchain within the three day time period.  Funds are transfered from the P2SH script back to
 Alice's wallet.  Acceptance of the redemption script let's the nodes know that Alice has accepted the add and it should be reported as
