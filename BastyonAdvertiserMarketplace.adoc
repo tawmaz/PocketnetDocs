@@ -9,10 +9,10 @@ the power to choose what types of advertisements are allowed on their channel, v
  .. Node: add to user info
  .. Front End: create transaction Set Price for text/image or video (different prices)
 
-. Advertiser creates a special type of a post – Ad Post. It contains a partially signed Ad transaction with an ad for a given blogger. All that remains is the blogger’s signature. It is attached as text to the Ad Post. Inputs have to be non-wallet inputs and cannot be moved (on the front end) until the time expiration (3 days for the ad). 
+. Advertiser creates a special type of a post – Ad Post. It contains a conditional transaction with an ad for a given blogger. All that remains is for the blogger to post an unlocking transaction to send the coins back to their wallet. It is attached as text to the Ad Post. Inputs have to be non-wallet inputs and cannot be moved (on the front end) until the time expiration (3 days for the ad). 
 PKOIN is added that is equal to the price of the blogger is Set Price (text/image or video different)
-..Node: new transaction Ad Post
-..Don’t allow to move money from the input that is used in the ad transaction for 3 days [3 days seems short]
+..Node: new transaction AdPost
+..Don’t allow to move money from the input that is used in the ad transaction for 3 days
 
 . Advertiser can look for bloggers to offer the post to by using search based on :
 .. Number of followers: NF
@@ -33,11 +33,11 @@ PKOIN is added that is equal to the price of the blogger is Set Price (text/imag
 
 ## Blockchain Implementation
 
-The proposed method to implement Ad Post on the blockchain is through a conditional time locked script which the blogger can redeem within a specified time period (initialially 3 days or 4320 blocks.  Below is the workflow for two users exchanging in a AdPost transaction.  Bob is a prospective advertiser who wishes to advertise on Alice's feed.
+The proposed method to implement Ad Post on the blockchain is through a conditional time locked script which the blogger can redeem within a specified time period (initialally 3 days or 4320 blocks).  Below is the workflow for two users exchanging in an AdPost transaction.  Bob is a prospective advertiser who wishes to advertise on Alice's feed.
 
 1. Bob creates a standard post content transaction on the Bastyon platform which contains the content he wishes to advertise.
 
-2. Bob creates an AdPost transaction which contains the payment amount, a AdPost payload pointing to the TX hash of the transaction in step 1, and the below script in the scriptPubKey:
+2. Bob creates an AdPost transaction which contains the payment amount, an AdPost payload pointing to the TX hash of the transaction in step 1, and the below script in the scriptPubKey:
 ```
  OP_IF <<
     "ad" << OP_EQUALVERIFY <<
