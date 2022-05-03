@@ -64,6 +64,32 @@ The bottom "ELSE" case begins with a sequence lock which prevents Bob from recla
 
 Example test cases of AdPost transaction: https://github.com/tawmaz/pocketnet.core/blob/multisig_ad/src/test/pocketnet_social_tests.cpp
 
+## RPC APIs
+
+Name: getadpost
+
+Description: Get all AdPost transactions for a specified Pocketnet address.
+
+```
+getadpost "wallet address"
+```
+
+Arguments:
+
+```
+   wallet address - Pocketnet address of the account which made the adpost request or the recipient
+```
+
+Result:
+```
+[{
+    "addrfrom" :  address      # pocketnet address of advertiser
+    "contentid" : txid         # TX ID of post to share to receive coins
+    "addrto" : address         # pocketnet address of recipient
+    "amount" : x.xx            # amount of adpost transaction
+    "spent"  : b               # true - transaction already spent, false otherwise
+}]
+```
 
 ## References
 Mastering Bitcoin: Using Flow Control in Scripts - https://github.com/bitcoinbook/bitcoinbook/blob/develop/ch07.asciidoc#using-flow-control-in-scripts
